@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/00848ba262.js" crossorigin="anonymous"></script>
+    <title>Technical Documentation</title>
+</head>
+<body>
+    <div id="nav-section">
+        <h2 class="nav-heading"> <i class="fas fa-bars "></i> CSS Docs</h2>
+                <h4 class="nav-heading">What is CSS?</h4>
+                <a class="nav-link" href="#intro">Introduction</a><br>
+                <a class="nav-link" href="#default">Default Behaviours of CSS</a><br>
+                <a class="nav-link" href="#box-model">Box-Model Properties</a><br>
+                <h4 class="nav-heading">Layout Properties</h4>
+                <a class="nav-link" href="#display">Display Property</a>
+                <a class="nav-link" href="#position">Position Property</a>
+                <a class="nav-link" href="#float">Float Property</a>
+                <a class="nav-link" href="#">Overflow Property</a>
+                <a class="nav-link" href="#">Responsiveness using CSS</a>
+                <h4 class="nav-heading">Styling Properties</h4>
+                <a class="nav-link" href="#">Font Properties</a>
+                <a class="nav-link" href="#">Background Properties</a>
+                <a class="nav-link" href="#">Card Styling Properties</a>
+                <a class="nav-link" href="#">Animations using keyframes</a>
+    </div>
+
+    <div id="docs">
+            <div>
+                <h1 class="blue" id="intro">Introduction</h1>
+            <ul>
+                <li>It stands for Cascading style sheets. This is used to style our HTML documents.
+                </li>
+                <li>It can be implemented by three ways: <br>
+                    <ul>
+                    <li><b class="blue">Inline CSS :</b> It implements CSS code using the style attribute, whose values are the properties that we want to configure to style our webpage. <br></li>
+                    <li><b class="blue">Internal CSS :</b> It implements the CSS code using the style tag.  There is one disadvantage of this, is that it doesn’t get reflected to all the webpages of our website and remains limited to the webpage for which we are adding the style tag. <br></li>
+                    <li><b class="blue">External CSS :</b> It implements the CSS code using a separate file consisting of the styling code using selectors, classes and IDs. And we link this file to our HTML file using link tags. This code gets reflected to all the webpages of the website. Element having class name are styled using .class_name and elements having ID name are styled using #ID_name.</li>
+                    </ul>
+                </li>
+                <li> We can debug our CSS code using the chrome developer tool by right clicking on the website and clicking on inspect.
+                </li>
+                <li><b class="blue">Ways to select HTML elements: </b><br>
+                    <ul>
+                    <li>Selectors are used to select a particular element and apply CSS to it. </li>
+                    <li><b class="blue">Class vs ID :</b> Properties defined using class are overridden by the properties defined using ID, because ID is more specific. We cannot use  the same ID for more than one element, but we can use the same class name for more than one element. We can’t concatenate two IDs for one element, but we can do this in class, in order to add the properties of different classes to a specific element, we can just concatenate the names of those classes in the element using class attributes.</li>
+                    <li>We have pseudo classes like :hover, which we can add to any of our selectors and define the properties to style the element, when the mouse cursor hovers over that element.</li>
+                    <li>There are some more selectors like *(all), adjacent selectors(next to something), descendent selectors(nested inside something), nth-of-type selectors( 1,2.. Or even odd), attribute selectors ( input[type=checked]{property:value;} ) </li>
+                    </ul>
+                </li>
+			</ul>
+            </div>
+
+            <div>
+                <h1 class="blue" id="default">Default Behaviours of CSS</h1>
+                <ul>
+                    <li> By default some positions and sizing is applied to the HTML elements like:
+                        <ul>
+                            <li><b class="blue">Content’s size :</b> the larger the content size we are gonna have, the bigger the element size is going to be.</li>
+                            <li><b class="blue">Order of Code :</b> the order in which we write our code, specifies what is going to be the position of our elements on the webpage.</li>
+                            <li><b class="blue">Child tags sit on the parent :</b> the nested element tags will be positioned on the top of the parent element tag. Like, a heading inside a div tag, would be positioned heading upon the div.</li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h1 class="blue" id="box-model">Box Model Properties</h1>
+                <ul>
+                    <li> Now, every HTML element is basically a box, and by changing its height, width, margin, padding, we can style the element that how our element is going to be layed out or shown up on the website.</li>
+                    <li>This is how the box model looks like:</li>
+                    <img src="box-model.png">
+                    <li>And, when we specify the borders or some size using four values, then those values correspond to the top, right, bottom, left...three values correspond to top, left & right, bottom….two values correspond to top & bottom, left & right...since every element that makes up the website is a box.</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h1 class="blue" id="display">Display Property for Layout</h1>
+                <ul>
+                    <li> Now, there is a property for layout of elements on the website and it is Display property, it has four values, block, inline, inline-block, none.</li>
+                    <li>By default, some elements have a block display, like heading, divs, lists, forms and paragraph, block elements are those elements which take the whole width of the webpage. And some elements have inline display by default, like span and links, inline elements are those elements which do not take the whole width of the webpage. Here spans are just like divs, we can style a part of a paragraph or something else differently by enclosing that part in span tags.</li>
+                    <li>By default, we can not change the width of the span, but we can do it using the display property. We can change the display property of span to block. Similarly, we can make the block elements inline by merely changing the display property to inline.</li>
+                    <li>But, when we make a block element inline, we lose the power to change its width, and we don’t want to lose this power, so we use the inline-block value of the display property, which makes the element inline and also allows us to change its width. By default images have the inline-block value for the display property.</li>
+                    <li>Now, the last value of display property is none, it just hides the element from the webpage, as if the element was never present on the page.</li>
+                    <li>So, if want to do a prank with somebody, then we can do it by changing the display property to none for her webpage, or we can use another property known as visibility with value hidden, it hides the element, but the position remains there, it looks like some element was present there previously, but now removed.</li>
+                </ul>
+            </div>
+
+
+             <div>
+                <h1 class="blue" id="position">Position Property for Layout</h1>
+                <ul>
+                    <li> NNow, we can change these default positionings using a property called position having four values as static, relative, absolute, fixed.</li>
+                    <li>By default, every element is static, which means go with the flow of HTML default rules.</li>
+                    <li>Relative positioning means we make changes in the position of the element using the coordinate properties top, bottom, left and right. It doesn’t affect the position of anything else on the screen. The top, bottom, left, right property works relative to the edges of the element. Like when i’ll specify the top as 40px, then the element will be pushed down 40px i.e shifts 40px relative to its top edge.</li>
+                    <li>And absolute positioning means we position our element relative to the parent element. It does affect the position of other elements on the screen. It just seems like we have got that element out of the flow of default HTML rules, and other elements still follow those rules, while this is not the case with relative.</li>
+                    <li>As by default, every element has body as its parent, so we need not specify position property to relative for the body, but if some element is nested in some another element, then we need to specify the position property for that element as relative first, then only we would be able to position the  nested element absolute to its parent.</li>
+                    <li>So, now if i have a coloured div in body tag, and i specify the position property as absolute and then coordinate property as right=50px, then the div will be shifted to the right side of the page having margin 50px i.e 50px relative to the right of the body.</li>
+                    <li>Now, fixed positioning means we just fix the element to its position, so that when we scroll the page, then also the element remains fixed to its position and all other elements will move with the scrolling. It is also relative to its parent element.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h1 class="blue" id="float">Float Property for Layout</h1>
+                <ul>
+                    <li> Now, if we want to wrap some text around an image, we use float property for the image with the value left, to wrap the text at the right of the image and with value right, to wrap the text at the left of the image. And we can also use clear property for the text in order to remove the wrapping, with value left to make the text doesn’t allow anything at its left and with value right to make the text doesn’t allow anything at its right.</li>
+                </ul>
+            </div>
+
+    </div>
+</body>
+</html>
